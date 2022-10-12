@@ -62,3 +62,4 @@ h2, p, ul   {
 div li:nth-child(1) {
     color: red;
 }
+/* div li:first-child = div li:nth-child(1) */
