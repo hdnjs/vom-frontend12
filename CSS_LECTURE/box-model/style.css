@@ -1,0 +1,81 @@
+*   {
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. margin은 요소와 요소 사이의 간격을 정의함
+      하나의 값은 4개의 면에 공통으로, 2개의 값은 위, 아래 순으로, 3개의 값은 위 좌우, 아래 순으로, 4개의 값은 위부터 시계 방향으로 값이 적용됨
+      
+   2. padding은 컨텐츠와 보더 사이의 간격을 정의함, 요소에 포함된 영역
+      하나의 값은 4개의 면에 공통으로, 2개의 값은 위, 아래 순으로, 3개의 값은 위 좌우, 아래 순으로, 4개의 값은 위부터 시계 방향으로 값이 적용됨
+   3. border는 박스의 선을 정의함
+      border-width는 상화좌우 4개의 값으로 구분됨
+      border-style은 주로 solid가 사용되며, 다양한 모양이 존재함
+      특히 주의할 점은 축약해서 써야할 때 border-style을 누락하면 안됨
+      
+   4. box-sizing은 간격이 요소에 어떻게 영향으르 미치는지를 정의함
+      content-box는 요소를 그대로 두고 간격이 추가되어 box가 추가된 만큼 커짐
+      border-box는 box의 크기는 변화를 주지 않고 영역 안으로 추가된 간격이 적용되기 때문에 box 크기 변화를 주지 않음
+      일반적으로 border-box는 초기에 작성하는 기본값으로 활용되는 경우 많음 
+      
+   5. backgruond 속성은 박스의 배경을 정의함.
+      background-color는 색상만 지정함
+      background-image는 경로를 지정함. 이 때
+      background-repeat은 repeat가 디폴트여서 no-repeat값을 지정
+      background-position은 첫번째 값은 좌우, 두번째 값은 위아래로 위치를 지정
+      background-size는 사진과 박스의 비율이 다를 경우 사진을 어떻게 채울지 지정함. contain의 경우 사진은 다 나오되 박스의 나머지는 비워둠, 이에 반해 cover는 사진이 박스에 가득 차지만 비율로 인해 사진의 일부가 잘리게 됨 */
+
+div:nth-child(1) {
+    background: yellow;
+    border: 1px solid;
+    padding: 10px;
+    _margin: 10px 20px 30px 40px;
+    /* top 기준으로 시계방향으로 적용 */
+    _margin-top: 10px;
+    _margin-right: 20px;
+    _margin-bottom: 30px;
+    _margin-left: 40px;
+
+    padding: 10px 20px 30px 40px;
+    _padding-top: 10px;
+    _padding-right: 20px;
+    _padding-bottom: 30px;
+    _padding-left: 40px;
+}
+
+div:nth-child(2)    {
+    background: red;
+}
+
+div.border  {
+    _margin: 100px auto;
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    _border-width: 1px;
+    _border-style: solid;
+    _border-color: red;
+}
+
+div.content {
+    margin-top: 100px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+div.image   {
+    width: 600px;
+    height: 450px;
+    border: 1px solid #888;
+    margin-top: 100px;
+
+    background: url('w6.jpg') no-repeat right center;
+    _background: url('w6.jpg');
+    _background-repeat: no-repeat;
+    /* background-repeat는 디폴트값 */
+    _background-position: right center;
+    background-size: contain;
+}

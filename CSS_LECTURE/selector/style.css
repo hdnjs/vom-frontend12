@@ -63,3 +63,13 @@ div li:nth-child(1) {
     color: red;
 }
 /* div li:first-child = div li:nth-child(1) */
+
+/* 9. 의제 선택자
+   before, after를 사용할 대 content 속성의 값은 필수
+   빈 공간을 나타내고 싶다면 ''을 사용함 */
+h1::before  {
+    content: '[';
+}
+h1::after   {
+    content: ']';
+}
