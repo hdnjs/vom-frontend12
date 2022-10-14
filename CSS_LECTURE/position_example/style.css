@@ -1,0 +1,50 @@
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #888;
+}
+
+div.header  {
+    background: red;
+    width: auto;
+    height: 100px;
+}
+
+div.box1    {
+    background: orange;
+    margin-top: 20px;
+    width: 50%;
+    height: 250px;
+    position: relative;
+}
+
+p.one  {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #888;
+    background: yellow;
+    position: absolute;
+}
+
+div.box2 {
+    background: green;
+    width: 50%;
+    height: 250px;
+    position: relative;
+    left: 50%;
+}
+
+p.two {
+    width: 80px;
+    height: 80px;
+    background: white;
+    position: absolute;
+    border: 1px solid #888;
+}
+
+div.footer {
+    background: blue;
+    width: auto;
+    height: 100px;
+    margin-top: 20px;
+}
