@@ -1,3 +1,11 @@
+/* 
+    1. animation-name: 애니메이션 keyframe와 연결할 이름
+    2. animation-delay: 애니메이션 실행을 특정 시간동안 지연시킴
+    3. animation-fill-mode: 애니메이션 실행 후 속성이 지속(forwards 적용 시)
+    4. animation-iteration-count: 애니메이션 실행 횟수 지정
+    5. animation-direction: 애니메이션 변화 이전으로 자동 계산하여 실행(alternate 적용 시)
+    6. animation-duration: 애니메이션 지속 시간 지정 */
+
 *   {
     margin: 0;
     padding: 0;
@@ -19,14 +27,20 @@ div.inner   {
     background: yellow;
     _margin: 100px auto;
     _animation-name: change-element;
-    /* 아래 keyframes를 animation 적용할 대상(이름) 적어서 연결시키기 */
+    /* 애니메이션 효과가 동작하기 위해 animation-name 속성을 이용하여 요소와 아래 키 프레임을 연결 */
     _animation-duration: 1s;
     _animation-delay: 1s;
+    /* 애니메이션 효과가 나타나기까지의 지연 시간을 설정 */
     _animation-fill-mode: forwards;
     _animation-iteration-count: 3;
+    /* 애니메이션 효과의 반복 횟수 설정, infinite(무한반복) */
     _animation-direction: alternate;
+    /* 애니메이션의 진행방향 설정 */
     _animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     animation: change-element 1s 3 cubic-bezier(0.075, 0.82, 0.165, 1) alternate forwards;
+    /* 애니메이션 효과의 시간당 속도 설정, ease(기본값) */
+
+    /* 애니메이션 적용할 대상에 animation 속성 작성 및 @keyframes에 애니메이션 구간을 정하고 구간별로 어떤 스타일을 적용시킬지 정하는 문법  */
 }
 
 @keyframes change-element {
@@ -40,7 +54,7 @@ div.inner   {
         height: 400px;
         background: red;
     }
-    /* 0%(시작. 즉, inner박스)부터 100%(끝. 즉, outer박스)의 'change-element' 이름의 애니메이션 keyframes 생성 */
+    /* 0%(시작/from. 즉, inner박스)부터 100%(끝/to. 즉, outer박스)의 'change-element' 이름의 애니메이션 keyframes 생성 */
 }
 
 div.ham {
@@ -63,8 +77,10 @@ i.fa-solid  {
 @keyframes scale-ham {
     0%  {
         font-size: 30px;
+        opacity: 0.6;
     }
     100%    {
-        font-size: 50px
+        font-size: 80px;
+        opacity: 1;
     }
 }
