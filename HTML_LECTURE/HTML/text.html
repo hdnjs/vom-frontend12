@@ -5,46 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Tags</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-        div {    
-            background-color: yellow;
-            width: 50%;
-            height: 30px;
-            /* display: inline; => 텍스트를 인라인 형태로 변경*/
+        /* div{
+            background:yellow;
+            width:50%;
+            height:30px;
+            display:inline;
         }
-
-        /* span    {
-            background-color: red;
-            width: 50%;
-            height: 30px;
-            display: block; => 텍스트를 블록 형태로 변경
+        span{
+            background:red;
+            width:50%;
+            height:30px;
+            display:block;
         } */
 
-        span    {
-            color: red;
-        }
-
+        span{color:red;}
+        em{font-style:normal;}
+        strong{font-weight:normal;}
+        h1{color:aquamarine;}
+        h1>i{font-style:normal; color:brown;}
     </style>
 </head>
 <body>
-    <!-- 블록(개행 및 기본 너비 100% 속성 지님) 과 인라인(개행x 및 margin, width, height 속성 지님) -->
-    <div>division 태그</div>
-    <span>span 태그</span>
-    <span>span1 태그</span>
 
-    <p>Lorem <span>Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <h1>lo<i>R</i>em</h1>
+    <i class='bx bxs-like bx-lg'></i>
+    <!-- 블록과 인라인 -->
+    <div>디비전 태그</div>
+    <div>디비전 태그1</div>
+    <span>스팬태그</span>
+    <span>스팬태그1</span>
 
-    <i>기울임 태그</i><br>
-    <em>기울임 태그</em><br><br>
+    <p>Lorem <span>Ipsum</span> is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
-    <b>굵은 글씨체</b><br>
-    <strong>굵은 글씨체</strong>
+    <i>기울임 태그 입니다.</i><br>
+    <em>기울임 태그 입니다.</em><br><br>
 
-    <!-- i 태그와 b 태그는 디자인 이름을 표시한 태그
-         하지만 html5에서 이들이 왜 기울이고 굵헤나는지에 대한 의미를 강조하여 표시 -->
+    <b>굵은 글씨체 입니다.</b><br>
+    <strong>굵은 글씨체 입니다.</strong>
 
-    <!-- i, em, b, strong 태그는 텍스트 자체의 디자인보다 사용 용도에 따라 다양하게 사용하는 것이 중요 -->
+    <!-- i 태그와 b 태그는 디자인 이름을 표시한 태그이다
+    하지만 html5에서는 이들이 왜 기울이고 굵게 하는지에 대한 의미를 강조하여 표시한다 -->
 
+    <!-- i, em, b, strong 태그는 택스트 자체의 디자인 보다 사용 용도에 따라 다양하게 사용하는 것이 중요하다 -->
+    
 </body>
 </html>

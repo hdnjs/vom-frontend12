@@ -7,9 +7,7 @@
     <title>Table Tag</title>
     <style>
         table{width:200px; border-collapse: collapse;}
-        table tr:nth-child(1)>td   {
-            background: greenyellow;
-        }
+        table tr:nth-child(1)>td{background:greenyellow;}
     </style>
 </head>
 <body>
@@ -38,11 +36,10 @@
         </tr>
     </table>
 
-    <!-- table 태그는 선이 없는 것이 디폴트 값
-         따라서 border 속성을 적용해야 함
-         선은 이중선이 디폴트 값
-         따라서 border-collapse 값을 collapse로 적용해야 실선이 됨
-         스타일 적용시 table 태그의 자식으로 tbody가 자동 삽입되므로 직계자식 선택자를 사용하지 않음 -->
-
+    <!-- 테이블 태그는 선이 없는 것이 디폴트 값이다
+    따라서 border 속성을 적용해야 한다
+    선은 이중선이 디폴트 값이다
+    따라서 border-collapse 값을 collapse로 적용해야 실선이 된다
+    스타일 적용시 table 태그의 자식으로 tbody가 자동 삽입되므로 직계자식 선택자를 사용하지 않는다 -->
 </body>
 </html>

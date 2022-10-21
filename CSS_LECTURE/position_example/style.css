@@ -1,50 +1,20 @@
-div {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #888;
-}
+*{margin:0; padding:0; box-sizing:border-box;}
+.wrap{width:100%; height:auto; border:1px solid; max-width:900px; margin:auto; padding:10px;}
 
-div.header  {
-    background: red;
-    width: auto;
-    height: 100px;
-}
+.header, .footer{width:100%; height:100px; border:1px solid;}
+.header{margin-bottom:10px;}
+.footer{margin-top:10px;}
+/* .main:after{content:''; display:block; clear:both;}
+.box1, .box2, .box3, .box4{width:50%; height:300px; float:left;}
+.box1, .box4{border:1px solid;}
 
-div.box1    {
-    background: orange;
-    margin-top: 20px;
-    width: 50%;
-    height: 250px;
-    position: relative;
-}
+.box1{position:relative;}
+.box1 > .inbox1{width:80px; height:80px; border:1px solid; position:absolute; left:50%; margin-left:-40px;}
 
-p.one  {
-    width: 80px;
-    height: 80px;
-    border: 1px solid #888;
-    background: yellow;
-    position: absolute;
-}
+.box4{position:relative;}
+.box4 > .inbox2, .box4 > .inbox3{width:80px; height:80px; border:1px solid; position:absolute;}
+.inbox2{bottom:0; left:0;}
+.inbox3{right:0; bottom:0;} */
 
-div.box2 {
-    background: green;
-    width: 50%;
-    height: 250px;
-    position: relative;
-    left: 50%;
-}
-
-p.two {
-    width: 80px;
-    height: 80px;
-    background: white;
-    position: absolute;
-    border: 1px solid #888;
-}
-
-div.footer {
-    background: blue;
-    width: auto;
-    height: 100px;
-    margin-top: 20px;
-}
+.up, .down{width:50%; height:300px; border:1px solid;}
+.down{left:50%; position:relative;}

@@ -1,87 +1,65 @@
-/* 
-- transform(변환)은 요소에 특정 변형 효과를 지정함. 일반적으로 2d 변형은 4가지가 쓰임
-  변환 속성은 주변 요소에 영향을 주지 않음
+/*
+- transform(변환)은 요소에 특정 변형 효과를 지정한다. 일반적으로 2d 변형은 4가지가 쓰인다. 변환 속성은 주변 요소에 영향을 주지 않는다.
+1. translate : 요소의 위치를 이동 시킨다. x, y 좌표를 각각 지정할 수 있고, 좌표 없이 (xpx, ypx) 방식으로 함께 지정할 수도 있다.
+2. scale : 요소의 크기를 변화 시킨다. x, y 좌표를 각각 지정할 수 있고, 좌표 없이 (xpx, ypx) 방식으로 함께 지정할 수도 있다.
+3. skew : 요소를 특정 각도로 비튼다. x, y 좌표를 각각 지정할 수 있고, 좌표 없이 (xpx, ypx) 방식으로 함께 지정할 수도 있다.
+skewX는 x축을 고정시키고 세로를 비틀고, skewY는 y축을 고정시키고 가로를 비튼다고 이해하면 된다.
+4. rotate : 요소를 특정 각도로 돌린다. 
+x, y축을 지정하면 해당 축을 기준으로 돌리게 되고, 둘 모두를 축약으로 지정하게 되면 중앙축이 적용되어 돌린다.
 
-1. translate: 요소의 위치를 이동시킴. x, y 좌표를 각각 지정할 수 있고, 
-              좌표 없이 (xpx, ypx) 방식으로 함께 지정 가능
-2. scale: 요소의 크기를 변화시킴. x, y 좌표를 각각 지정할 수 있고, 
-          좌표 없이 (xpx, ypx) 방식으로 함께 지정 가능
-3. skew: 요소를 특정 각도로 비틈. x, y 좌표를 각각 지정할 수 있고, 
-         좌표 없이 (xpx, ypx) 방식으로 함께 지정 가능
-         skewX는 x축을 고정시키고 세로를 비틀고, skewY는 y축을 고정시키고 가로를 비튼다고 이해하면 됨
-4. rotate: 요소를 특정 각도로 돌림. y축을 지정하면 해당 축을 기준으로 돌리게 
-           되고, 둘 모두를 축약으로 지정하게 되면 중앙축이 적용되어 돌림*/
+*/
 
-*       {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-div.outer   {
-    width: 200px;
-    height: 200px;
-    border: 5px solid;
+div.outer{
+    width:200px;
+    height:200px;
+    border:1px solid;
     margin: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    _display:flex;
+    _align-items: center;
+    _justify-content: center;
 }
 
-div.inner   {
-    width: 100px;
-    height: 100px;
-    background: yellow;
-    _margin: 25%;
-    /* margin 50px auto */
+div.inner{
+    width:100px;
+    height:100px;
+    _margin:auto;
+    background:yellow;
 }
 
-div.outer1 > div.inner  {
-    background: red;
-    _transform: translateX(50px);
-    /* translateX: X축으로 50px 이동
-       translateY: Y축으로 얼만큼 이동
-       translate(50px, 50px): X축으로 50px, Y축으로 50px */
+div.outer1 > div.inner{
+    transform:translate(50px, 50px);
 }
 
-div.outer2 > div.inner  {
-    background: orange;
-    _transform: scaleX(1.5);
-    _transform: scaleY(2);
-    _transform: scale(1.5, 2);
+div.outer2 > div.inner{
+    _transform:scaleX(1.5);
+    _transform:scaleY(2);
+    _transform:scale(1.5, 2);
+    transition:all 0.4s ease;
 }
 
-div.outer3 > div.inner  {
-    _transform: skewX(40deg);
-    _transform: skewY(30deg);
-    transform: skew(40deg, 30deg);
+div.outer2:hover > div.inner{
+    transform:scale(1.2);
 }
 
-div.outer4 > div.inner  {
-    background: green;
-    _transform: rotateX(40deg);
-    _transform: rotateY(50deg);
+div.outer3 > div.inner{
+    _transform:skewX(40deg);
+    _transform:skewY(30deg);
+    transform:skew(40deg, 30deg);
+}
+
+div.outer4 > div.inner{
+    _transform:rotateX(40deg);
+    _transform:rotateY(50deg);
     transform-origin: top left;
-    transform: rotate(40deg);
+    transform:rotate(40deg);
 }
 
-div.outer2:hover > div.inner    {
-    transform: scale(1.2);
-    transition-duration: 0.4s;
-    /* 
-    [직접 작성한 코드]
-    div.outer2 hover 했을 때 div.inner의 스케일이 1.2배 커짐. 단, 커지는 속도는 0.4s */
-    /* div.outer2:hover 일 경우 outer2 박스 근처롤 마우스 포인터 이동 시 hover 됨
-    div.inner:hover 일 경우 inner 박스 근처로 마우스 포인터 이동 시 hover 됨 */
-}
-
-/* 
-[직접 작성한 코드말고 다른 방법 1] 대상에 일일이 trasition을 해주는 번거로움을 덜기 위해 transition/transform 나눠서 작성
-
-div.outer2 > div.inner  {
-    transition: all 0.4s ease;
-}
-
-div.outer2 > div.inner:hover    {
-    transform: scale(1.2);
-} */
+/*
+    div.outer2를 호버했을때 div.innter의 스케일이 1.2배 커진다. 커지는 시간은 0.4초.
+*/

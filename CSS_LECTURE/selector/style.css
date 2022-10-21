@@ -1,75 +1,44 @@
 /* cascade style sheet */
-/* 1. 외부보다는 내부, 내부보다는 인라인이 우선 적용 
-   2. 먼저 작성된 것보다 후에 작성된 것이 우선 적용 */
+/* 1. 외부보다는 내부, 내부보다는 인라인이 우선 적용 */
+/* 2. 먼저 작성된 것보다 후에 작성된 것이 우선 적용 */
 
-/* selector{property: property-value} */
+/* selector{property: propety-value;} */
 
-/********** selcetor **********/
-/* 1. 태그 선택자: 태그 이름을 그대로 사용 */
+/*********** selector *************/
+/* 1. 태그 선택자 : 태그 이름을 그대로 사용한다 */
+h2{color:red;}
+/* 2. 아이디, 클래스 선택자 : 아이디는 #, 클래스는 .로 연결한다 */
+#abc{color:yellow;}
+.cde{color:blue;}
+/* 3. 전체 선택자 : 전체 엘리먼트를 선택하며 *로 표시한다 */
+/* *{border: 2px solid;} */
+/* 4. 자식 선택자 : 편집하고자 하는 요소의 부모로부터 > 표시를 사용한 하위 요소 */
+/* p > span > a{text-decoration: none; color:black;} */
 
-h2  {
-    color: red;
-}
+p > span > a{text-decoration: none; color:#000;}
 
-/* 2. 아이디, 클래스 선택자: 아이디는 #, 클래스는 .로 연결 */
-#abc    {
-    color: yellow;
-}
+/* 5. 후손 선택자 : 편집하고자 하는 요소의 상위 부모로부터 공백을 사용한 하위요소 */
+/* 후손 선택자는 자식을 포함한 후손을 선택한다 */
 
-.cde    {
-    color: blue;
-}
+ul ul a{color:red;}
 
-/* 3. 전체 선택자: 전체 element 선택하며 *로 표시 */
-/* *   {
-    border: 2px solid;
-} */
+/* 6. 그룹선택자 : 속성과 값이 같은 요소를 공통 요소로 선택 */
 
-/* 4. 자식 선택자: 편집하고자 하는 요소의 부모로부터 > 표시를 사용한 하위 요소 */
+h2, p, ul{border:1px solid;}
 
-/* p > a  {
-    text-decoration: none;
-    color: black;
-} */
+/* 7. 형제 선택자 */
+/* + 기호는 기준 요소 다음 형제 요소 선택 */
+/* ~ 기호는 기준 요소 다음 형제 요소 전체 선택 */
+.para + p{color:red;}
+.para ~ p{color:yellow;}
 
-/* 5. 후손 선택자: 편집하고자 하는 요소의 상위 부모로부터 공백을 사용한 하위 요소
-   후손 선택자는 자식을 포함한 후손을 선택함 */
-ul.navi > li > a {
-    color: red;
-}
+/* 8. 가상선택자(nth) */
+/* div li:nth-child(1){color:red;} */
+div li:first-child{color:red;}
+div li:last-child{color:green;}
 
-ul ul a   {
-    color: yellow;
-}
-
-/* 6. 그룹 선택자: 속성과 값이 같은 요소를 공통 요소로 선택 */
-h2, p, ul   {
-    border: 1px solid;
-}
-
-/* 7. 형제 선택자 
-   + 기호는 기준 요소 다음 형제 요소 선택
-   ~ 기호는 기준 요소 다음 형제 요소 전체 선택 */
-.para + p   {
-    color: red;
-}
-
-.para ~ p   {
-    color: yellow;
-}
-
-/* 8. 가상 선택자(nth) */
-div li:nth-child(1) {
-    color: red;
-}
-/* div li:first-child = div li:nth-child(1) */
-
-/* 9. 의제 선택자
-   before, after를 사용할 대 content 속성의 값은 필수
-   빈 공간을 나타내고 싶다면 ''을 사용함 */
-h1::before  {
-    content: '[';
-}
-h1::after   {
-    content: ']';
-}
+/* 9. 의제선택자 */
+/* before, after를 사용할 때 content 속성의 값은 필수이다. 빈 공간을 나타내고 싶다면 ''를 사용한다 */
+/* h1::before{content:'['} */
+h1{position:relative; width:200px; text-align:center;}
+h1::after{content:''; position:absolute; width:100%; height:2px; background:rebeccapurple; left:0; bottom:0;}
