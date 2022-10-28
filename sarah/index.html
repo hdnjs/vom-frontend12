@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="css/style.css" />	
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
 	<!-- <script type="text/javascript" src="js/jpreloader.js"></script>  -->
 </head>
 <body>
 	<div class="bg"></div>
 
 	<!-- Logo -->
-	<h1>
+	<h1 class="logo">
+		<!-- custom.js > const logoElm으로 인해 추가함 -->
 		<img src="../sarah/img/logo.png" alt="">
 	</h1>
 
@@ -51,7 +51,8 @@
 
 	<div class="img-container">
 		<section>
-			<img src="../sarah/img/pic0.jpg" alt="" />
+			<!-- <img src="../sarah/img/pic0.jpg" alt="" /> -->
+		</section>
 			<div class="nav">
 				<ul>
 					<li>
@@ -146,9 +147,18 @@
 					</li>
 				</ul>
 			</div>
-		</section>
+		<!-- </section> -->
 	</div>
 
+	<!-- <script type="text/javascript" src="js/custom.js"></script> -->
+	<!-- 해당 페이지 동작 확일할 경우 상기 주석처리한 부분 해제하면 웹페이지 확인 가능 -->
+
+	<script
+  		src="https://code.jquery.com/jquery-3.6.1.js"
+  		integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  		crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="js/customJquery.js"></script>
 </body>
 </html>
 
